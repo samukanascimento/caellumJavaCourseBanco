@@ -22,7 +22,7 @@ public class TestaBanco {
             }
         }
 
-        banco.mostraContas();
+        banco.pegaQuantidadeDeContas();
 
     }
 }
