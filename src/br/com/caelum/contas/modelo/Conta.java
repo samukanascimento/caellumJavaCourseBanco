@@ -1,5 +1,7 @@
 package br.com.caelum.contas.modelo;
 
+import java.util.Objects;
+
 /**
  * Classe responsável por moldar as contas do banco
  *
@@ -103,6 +105,10 @@ public abstract class Conta implements Comparable<Conta> {
         return this.numeroConta == outraConta.numeroConta && this.numeroAgencia == outraConta.numeroAgencia;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(numeroAgencia, numeroConta);
+    }
 
     // Getters e Setters
     public static int getNumeroDeContas() {
