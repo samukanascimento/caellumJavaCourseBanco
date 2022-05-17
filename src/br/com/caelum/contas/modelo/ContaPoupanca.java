@@ -1,6 +1,6 @@
 package br.com.caelum.contas.modelo;
 
-import org.jetbrains.annotations.NotNull;
+import com.sun.istack.internal.NotNull;
 
 public class ContaPoupanca extends Conta {
 

@@ -4,8 +4,8 @@ import br.com.caelum.contas.modelo.Conta;
 import br.com.caelum.contas.modelo.ContaCorrente;
 import br.com.caelum.contas.modelo.ContaPoupanca;
 import br.com.caelum.javafx.api.util.Evento;
-import org.jetbrains.annotations.NotNull;
 
+import java.io.FileNotFoundException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -49,6 +49,12 @@ public class ManipuladorDeContas {
     public void ordenaLista(Evento evento){
         List<Conta> contas = evento.getLista("destino");
         Collections.sort(contas);
+    }
+
+    public void salvaDados(Evento evento) throws FileNotFoundException {
+        List<Conta> contas = evento.getLista("listaContas");
+        RepositorioDeContas repositorio = new RepositorioDeContas();
+        repositorio.salva(contas);
     }
 }
 
